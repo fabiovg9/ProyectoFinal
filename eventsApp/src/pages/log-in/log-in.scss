@@ -1,0 +1,39 @@
+.button-face {
+    background-color: #29487d;
+    width: 100%;
+}
+
+.button-face i {
+    height: 50%;
+}
+
+.button-google {
+    background-color: #db4437;
+    width: 100%;
+}
+
+.button-google i {
+    height: 50%;
+}
+
+a {
+    cursor: pointer;
+}
+
+.register {
+    margin-left: 16px;
+    margin-top: 15px;
+}
+
+.register a {
+    color: #365899;
+    text-decoration: underline;
+    font-style: italic;
+    display: block;
+    text-align: center;
+}
+
+.button-sigIn {
+    width: 100%;
+    margin-top: 26px;
+}
