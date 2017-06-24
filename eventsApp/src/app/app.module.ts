@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { Authentication } from './services/authentication';
+import { EventosServices } from './services/eventosServices';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -42,6 +43,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     Authentication,
+    EventosServices,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

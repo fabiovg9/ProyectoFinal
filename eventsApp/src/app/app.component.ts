@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Authentication } from './services/authentication';
+import { EventosServices } from './services/eventosServices';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -23,7 +24,8 @@ export class MyApp {
   constructor(public platform: Platform,
                   public statusBar: StatusBar,
                   public splashScreen: SplashScreen,
-                  public auth: Authentication) {
+                  public auth: Authentication,
+                  public eventService: EventosServices) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation

@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyB6unpfS2Kjx6S9TVSLIPgO1AbZDsf6mR0",
-    authDomain: "fir-ionic01app.firebaseapp.com",
-    databaseURL: "https://fir-ionic01app.firebaseio.com",
-    projectId: "fir-ionic01app",
+    apiKey: "AIzaSyCi6w1HZ_T-rxrvGjaHSa4NkK8brCnnolk",
+    authDomain: "eventos-e6792.firebaseapp.com",
+    databaseURL: "https://eventos-e6792.firebaseio.com",
+    projectId: "eventos-e6792",
     storageBucket: "",
-    messagingSenderId: "16752111107"
+    messagingSenderId: "574898818800"
   };
