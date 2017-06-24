@@ -1,8 +1,16 @@
 {
     "eventos": {
-        "futbol": {
-            "nombre": "Nacional vs Cali",
-            "fecha": "06/24/2017"
+        "Futbol": {
+            "Nombre": "Nacional vs Cali",
+            "Fecha": "06/24/2017",
+            "Categoria":"Deportes",
+            "Imagen":"https://pbs.twimg.com/media/AzmQPibCIAAGjuV.png"
+        },
+        "Casa Juan": {
+            "Nombre": "Nacional vs Cali",
+            "Fecha": "06/24/2017",
+            "Categoria":"Trabajos",
+            "Imagen":"https://butnerblogspot.files.wordpress.com/2009/12/droopydope.jpg"
         }
     }
 }

@@ -7,10 +7,12 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
-        <div ion-item *ngFor="let event of events">
-            {{event}}
-        </div>
-    </ion-list>
+<ion-content>  
+    <a href="event-details/event-details.html" *ngFor="let event of events">
+    <ion-card >
+        <img src={{event.Imagen}}/>
+        <div class="card-title">{{event.$key}}</div>
+        <div class="card-subtitle">{{event.Fecha}}</div>
+    </ion-card></a>
+
 </ion-content>
