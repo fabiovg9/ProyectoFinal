@@ -8,6 +8,7 @@ import { EventosServices } from './services/eventosServices';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { EventDetailsPage } from '../pages/event-details/event-details';
 import { LogInPage } from './../pages/log-in/log-in';
 //Component
 @Component({
@@ -31,7 +32,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { icon: 'home', title: 'Inicio', component: HomePage },
-      { icon: 'calendar', title: 'Eventos', component: ListPage }
+      { icon: 'calendar', title: 'Eventos', component: ListPage },
+      { icon: 'browsers', title: 'Detalle', component: EventDetailsPage }
     ];
 
     this.invitedPages = [

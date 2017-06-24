@@ -13,4 +13,10 @@ export class EventosServices{
     public getEvents(): FirebaseListObservable<any[]>{
         return this.db.list('/eventos');
     }
+    public getItem(id) {        
+        
+        return this.db.list('/eventos/'+id);
+        //return this.db.object(ref.child('Eventos').child(id));  
+    }
+
 }
