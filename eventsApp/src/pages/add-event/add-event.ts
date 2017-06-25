@@ -20,13 +20,13 @@ export class AddEventPage {
 
   public evento: Evento;
   
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams
               ) {
   }
 
   ngOnInit() {
-    this.evento = new Evento('','','','','','','');
+    this.evento = new Evento();
   }
 
   ionViewDidLoad() {
@@ -34,7 +34,7 @@ export class AddEventPage {
   }
 
   private add(){
-    console.log(this.evento.nombre + "\n" + this.evento.descripcion);
+    console.log(this.evento.Nombre + "\n" + this.evento.Descripcion);
     this.navCtrl.setRoot(ListPage);
   }
 
