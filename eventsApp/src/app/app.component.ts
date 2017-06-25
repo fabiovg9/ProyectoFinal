@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { EventDetailsPage } from '../pages/event-details/event-details';
 import { LogInPage } from './../pages/log-in/log-in';
+import { AddEventPage } from './../pages/add-event/add-event';
+
 //Component
 @Component({
   templateUrl: 'app.html'

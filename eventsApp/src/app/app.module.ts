@@ -15,6 +15,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LogInPage } from './../pages/log-in/log-in';
 import { EventDetailsPage } from './../pages/event-details/event-details';
+import { AddEventPage } from './../pages/add-event/add-event';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LogInPage,
-    EventDetailsPage
+    EventDetailsPage,
+    AddEventPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LogInPage,
-    EventDetailsPage
+    EventDetailsPage,
+    AddEventPage
   ],
   providers: [
     StatusBar,

@@ -2,6 +2,7 @@ import { EventosServices } from './../../app/services/eventosServices';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
+import {AddEventPage} from '../add-event/add-event';
 
 @IonicPage()
 @Component({
@@ -25,8 +26,11 @@ export class ListPage {
   private _getEvents(){
     this.eventsServices.getEvents().subscribe(eventos=>{
         this.events=eventos;
-        console.log(eventos);
     });
   } 
+
+  private addEvent() {
+    this.navCtrl.setRoot(AddEventPage);
+  }
 
 }

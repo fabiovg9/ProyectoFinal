@@ -4,15 +4,17 @@
       <ion-icon name="menu"></ion-icon>
     </button>
         <ion-title>Eventos</ion-title>
+        <button class="btnAddEvent" (click)="addEvent()"><ion-icon name="add-circle"></ion-icon></button>
     </ion-navbar>
 </ion-header>
 
-<ion-content>  
+<ion-content>
     <a href="event-details/event-details.html" *ngFor="let event of events">
-    <ion-card >
-        <img src={{event.Imagen}}/>
-        <div class="card-title">{{event.$key}}</div>
-        <div class="card-subtitle">{{event.Fecha}}</div>
-    </ion-card></a>
+        <ion-card>
+            <img src={{event.Imagen}}/>
+            <div class="card-title">{{event.$key}}</div>
+            <div class="card-subtitle">{{event.Fecha}}</div>
+        </ion-card>
+    </a>
 
 </ion-content>
