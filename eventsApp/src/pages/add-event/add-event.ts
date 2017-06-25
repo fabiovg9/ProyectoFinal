@@ -19,6 +19,7 @@ import { Evento } from './../../app/models/Evento';
 export class AddEventPage {
 
   public evento: Evento;
+  public currentDate: string = new Date().toISOString();
   
   constructor(public navCtrl: NavController,
               public navParams: NavParams
@@ -26,6 +27,8 @@ export class AddEventPage {
   }
 
   ngOnInit() {
+    console.log(this.currentDate);
+    console.log(new Date());
     this.evento = new Evento();
   }
 
@@ -34,7 +37,7 @@ export class AddEventPage {
   }
 
   private add(){
-    console.log(this.evento.Nombre + "\n" + this.evento.Descripcion);
+    console.log(this.evento);
     this.navCtrl.setRoot(ListPage);
   }
 

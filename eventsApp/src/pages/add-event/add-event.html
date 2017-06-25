@@ -21,7 +21,19 @@
         </ion-item>
         <ion-item>
             <ion-label floating>Fecha</ion-label>
-            <ion-datetime displayFormat="MMM/DD/YYYY" cancelText="Cancelar" doneText="Listo" [(ngModel)]="evento.Fecha"></ion-datetime>
+            <ion-datetime displayFormat="MMMM DD, YYYY" pickerFormat="MMMM DD YYYY" min="{{currentDate}}" cancelText="Cancelar" doneText="Listo" [(ngModel)]="evento.Fecha" name="fecha"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Hora</ion-label>
+            <ion-datetime displayFormat="HH:mm A" pickerFormat="HH:mm" cancelText="Cancelar" doneText="Listo" [(ngModel)]="evento.Hora" name="hora"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Categoría</ion-label>
+            <ion-select [(ngModel)]="evento.Categoria" name="categoria" okText="Listo" cancelText="Cancelar">
+                <ion-option value="Deportes">Deportes</ion-option>
+                <ion-option value="Tecnologia">Tecnología</ion-option>
+                <ion-option value="Educacion">Educación</ion-option>
+            </ion-select>
         </ion-item>
         <ion-item>
             <ion-label floating>Descripción</ion-label>
