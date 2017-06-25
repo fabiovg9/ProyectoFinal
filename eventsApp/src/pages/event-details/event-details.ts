@@ -17,8 +17,8 @@ import {Evento} from './../../app/models/Evento';
 export class EventDetailsPage {
 
 public Evento:Evento=new Evento();
-lat:number=51.678418;
-lng:number=7.809007;
+lat:number=6.256802;
+lng:number=-75.590286;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private eventsServices: EventosServices) {                

@@ -47,7 +47,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAQJab5nmZvyFWWxtpI9v8DAWp6tl5ZDhM'
+      apiKey: 'AIzaSyDBQ1u-cOk_phZnFssDHNxw2d-PJ4Coffo'
     })    
   ],
   bootstrap: [IonicApp],

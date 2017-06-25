@@ -14,12 +14,36 @@
 
 
 <ion-content> 
-  <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="17">
-    <sebm-google-map-marker
-            [latitude]="lat"
-            [longitude]="lng"
-            iconUrl="assets/img/taxi.png">
-    </sebm-google-map-marker>
-  </sebm-google-map>
-   
+   <ion-card>
+
+        <img src={{Evento.Imagen}}/>
+
+        <ion-card-content>
+            <ion-card-title>
+               {{Evento.Nombre}}
+            </ion-card-title>
+            <p>
+                {{Evento.Descripcion}}
+            </p>
+        </ion-card-content>
+        
+        <ion-item>
+            <ion-icon name='calendar' item-start style="color: #55acee"></ion-icon>
+            {{Evento.Fecha}}
+            <ion-badge item-end>{{Evento.Calificacion}}</ion-badge>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
+            {{Evento.Categoria}}
+            <ion-badge item-end>9</ion-badge>
+        </ion-item>  
+    </ion-card>
+
+    <sebm-google-map [latitude]="lat" [longitude]="lng" style="width: 100%; height: 100%"  [zoom]="17">
+      <sebm-google-map-marker
+              [latitude]="lat"
+              [longitude]="lng">
+      </sebm-google-map-marker>
+    </sebm-google-map>   
 </ion-content>
