@@ -19,9 +19,10 @@ import { AddEventPage } from './../pages/add-event/add-event';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ConnectivityProvider } from '../providers/connectivity/connectivity';
-import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
-import { LocationsProvider } from '../providers/locations/locations';
+
+// Mapas
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +43,10 @@ import { LocationsProvider } from '../providers/locations/locations';
     }),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAQJab5nmZvyFWWxtpI9v8DAWp6tl5ZDhM'
+    })    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,10 +62,7 @@ import { LocationsProvider } from '../providers/locations/locations';
     SplashScreen,
     Authentication,
     EventosServices,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConnectivityProvider,
-    GoogleMapsProvider,
-    LocationsProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

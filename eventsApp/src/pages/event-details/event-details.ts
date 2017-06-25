@@ -17,14 +17,12 @@ import {Evento} from './../../app/models/Evento';
 export class EventDetailsPage {
 
 public Evento:Evento=new Evento();
+lat:number=51.678418;
+lng:number=7.809007;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private eventsServices: EventosServices) {                
     this.getEventById();
-  }
-
-  ngOnInit(){  
-    
   }
 
   ionViewDidLoad() {
