@@ -15,7 +15,7 @@ import { EventosServices } from './../../app/services/eventosServices';
 })
 export class EventDetailsPage {
 
-public events =[];
+public event =[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private eventsServices: EventosServices) {
@@ -23,7 +23,7 @@ public events =[];
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventDetailsPage');
-    
+    this.getEventById();
 }
 
 
@@ -32,7 +32,7 @@ private getEventById(){
   var id="Casa Juan";
 
     this.eventsServices.getItem(id).subscribe(evento=>{
-        this.events=evento;
+        this.event=evento;
         console.log(evento);
     });
 

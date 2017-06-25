@@ -1,18 +1,24 @@
 {
     "eventos": {
-        "Futbol": {
-            "Id":"1",
+        "Futbol": {            
             "Nombre": "Nacional vs Cali",
-            "Fecha": "06/24/2017",
+            "Fecha": "06/26/2017",
             "Categoria":"Deportes",
-            "Imagen":"https://pbs.twimg.com/media/AzmQPibCIAAGjuV.png"
+            "Imagen":"https://pbs.twimg.com/media/AzmQPibCIAAGjuV.png",
+            "Hora":"07:00 pm",
+            "Descripcion":"Gran final del futbol colombiano, no te la pierdas",
+            "Calificacion":5,
+            "Ubiacacion":"6.256802, -75.590286"  
         },
-        "Casa Juan": {
-            "Id":"2",
-            "Nombre": "Nacional vs Cali",
+        "Casa Juan": {            
+            "Nombre": "Trabajo de grado Sena",
             "Fecha": "06/24/2017",
             "Categoria":"Trabajos",
-            "Imagen":"https://butnerblogspot.files.wordpress.com/2009/12/droopydope.jpg"
+            "Imagen":"https://butnerblogspot.files.wordpress.com/2009/12/droopydope.jpg",
+            "Hora":"08:00 pm",
+            "Descripcion":"El ventilador suena mucho y no hay papel higenico",
+            "Calificacion":1,
+            "Ubiacacion":"6.260461, -75.557952"        
         }
     }
 }
