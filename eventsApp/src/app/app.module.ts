@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { Authentication } from './services/authentication';
 import { EventosServices } from './services/eventosServices';
+import { CameraService } from './services/cameraServices';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -62,6 +63,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     SplashScreen,
     Authentication,
     EventosServices,
+    CameraService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

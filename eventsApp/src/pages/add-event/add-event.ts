@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventosServices } from './../../app/services/eventosServices';
+import { CameraService } from './../../app/services/cameraServices';
 
 import { ListPage } from './../list/list';
 
@@ -22,8 +24,9 @@ export class AddEventPage {
   public currentDate: string = new Date().toISOString();
   
   constructor(public navCtrl: NavController,
-              public navParams: NavParams
-              ) {
+              public navParams: NavParams,
+              private eventsServices: EventosServices,
+              private cameraServices: CameraService) {
   }
 
   ngOnInit() {
