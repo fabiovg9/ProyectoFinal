@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventosServices } from './../../app/services/eventosServices';
+import {Evento} from './../../app/models/Evento';
 
 /**
  * Generated class for the EventDetailsPage page.
@@ -15,15 +16,19 @@ import { EventosServices } from './../../app/services/eventosServices';
 })
 export class EventDetailsPage {
 
-public event =[];
+public Evento:Evento=new Evento();
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private eventsServices: EventosServices) {
+              private eventsServices: EventosServices) {                
+    this.getEventById();
+  }
+
+  ngOnInit(){  
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EventDetailsPage');
-    this.getEventById();
+    console.log('ionViewDidLoad EventDetailsPage');    
 }
 
 
@@ -31,9 +36,15 @@ private getEventById(){
   //var id= this.navParams.get("IdEvento");
   var id="Casa Juan";
 
-    this.eventsServices.getItem(id).subscribe(evento=>{
-        this.event=evento;
-        console.log(evento);
+    this.eventsServices.getItem(id).subscribe(evento=>{        
+        this.Evento.Nombre=evento[6].$value;
+        this.Evento.Fecha=evento[3].$value;
+        this.Evento.Categoria=evento[1].$value;
+        this.Evento.Imagen=evento[5].$value;
+        this.Evento.Hora=evento[4].$value;
+        this.Evento.Descripcion=evento[2].$value;
+        this.Evento.Ubiacacion=evento[7].$value;
+        console.log(this.Evento);
     });
 
 }

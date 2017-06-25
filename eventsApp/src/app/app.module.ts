@@ -19,6 +19,9 @@ import { AddEventPage } from './../pages/add-event/add-event';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ConnectivityProvider } from '../providers/connectivity/connectivity';
+import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
+import { LocationsProvider } from '../providers/locations/locations';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     Authentication,
     EventosServices,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConnectivityProvider,
+    GoogleMapsProvider,
+    LocationsProvider
   ]
 })
 export class AppModule {}

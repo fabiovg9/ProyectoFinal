@@ -13,6 +13,36 @@
 </ion-header>
 
 
-<ion-content padding>
-  <p>Hola Pelu!</p>
+<ion-content padding>     
+  <ion-tabs color="light">
+    <ion-tab [root]="tab1Root" tabTitle="Detalle" tabIcon="detail"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Mapa" tabIcon="navigate"></ion-tab>
+  </ion-tabs>
+
+    <ion-card>
+
+        <img src={{Evento.Imagen}}/>
+
+        <ion-card-content>
+            <ion-card-title>
+               {{Evento.Nombre}}
+            </ion-card-title>
+            <p>
+                {{Evento.Descripcion}}
+            </p>
+        </ion-card-content>
+
+        <ion-item>
+            <ion-icon name='calendar' item-start style="color: #55acee"></ion-icon>
+            {{Evento.Fecha}}
+            <ion-badge item-end>{{Evento.Calificacion}}</ion-badge>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
+            {{Evento.Categoria}}
+            <ion-badge item-end>9</ion-badge>
+        </ion-item>        
+
+    </ion-card>
 </ion-content>
