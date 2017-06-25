@@ -17,27 +17,15 @@
     <form #formEvent="ngForm" (ngSubmit)="add()">
         <ion-item>
             <ion-label floating>Nombre</ion-label>
-            <ion-input type="text" [(ngModel)]="evento.nombre" name="nombre"></ion-input>
+            <ion-input type="text" [(ngModel)]="evento.Nombre" name="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Fecha</ion-label>
+            <ion-datetime displayFormat="MMM/DD/YYYY" cancelText="Cancelar" doneText="Listo"></ion-datetime>
         </ion-item>
         <ion-item>
             <ion-label floating>Descripción</ion-label>
-            <ion-textarea [(ngModel)]="evento.descripcion" name="description"></ion-textarea>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Nombre</ion-label>
-            <ion-input type="text" [(ngModel)]="evento.nombre" name="nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Descripción</ion-label>
-            <ion-textarea [(ngModel)]="evento.descripcion" name="description"></ion-textarea>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Nombre</ion-label>
-            <ion-input type="text" [(ngModel)]="evento.nombre" name="nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Descripción</ion-label>
-            <ion-textarea [(ngModel)]="evento.descripcion" name="description"></ion-textarea>
+            <ion-textarea [(ngModel)]="evento.Descripcion" name="description"></ion-textarea>
         </ion-item>
         <div class="buttons">
             <button class="btnform" ion-button color="light" (click)="cancel()">Cancelar</button>
