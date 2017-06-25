@@ -21,7 +21,7 @@ import { Evento } from './../../app/models/Evento';
 export class AddEventPage {
 
   public evento: Evento;
-  public currentDate: string = new Date().toISOString();
+  public currentDate: string = new Date().toISOString().split('T')[0];
   
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -30,6 +30,7 @@ export class AddEventPage {
   }
 
   ngOnInit() {
+    debugger;
     console.log(this.currentDate);
     console.log(new Date());
     this.evento = new Evento();
@@ -37,6 +38,10 @@ export class AddEventPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddEventPage');
+  }
+
+private takePicture() {
+    this.cameraServices.takePicture();
   }
 
   private add(){

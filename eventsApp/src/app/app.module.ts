@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import { Authentication } from './services/authentication';
 import { EventosServices } from './services/eventosServices';
@@ -64,6 +65,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     Authentication,
     EventosServices,
     CameraService,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
