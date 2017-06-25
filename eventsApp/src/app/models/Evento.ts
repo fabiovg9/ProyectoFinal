@@ -1,10 +1,10 @@
 export class Evento{
     
     public Nombre: string;
-    public Fecha: string;
+    public Fecha: any;
     public Categoria: string;
     public Imagen: string;
-    public Hora: any;
+    public Hora: string;
     public Descripcion: string;
     public Ubiacacion: string;
     public Calificacion: number;
