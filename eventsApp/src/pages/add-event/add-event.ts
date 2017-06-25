@@ -45,7 +45,7 @@ private takePicture() {
   }
 
   private add(){
-    console.log(this.evento);
+    //this.eventsServices(this.evento);
     this.navCtrl.setRoot(ListPage);
   }
 

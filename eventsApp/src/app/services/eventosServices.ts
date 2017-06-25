@@ -19,4 +19,9 @@ export class EventosServices{
         //return this.db.object(ref.child('Eventos').child(id));  
     }
 
+    public insert(item: any){
+        const items = this.db.list('/eventos');
+        items.push(item);
+    }
+
 }
