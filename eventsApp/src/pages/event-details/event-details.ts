@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { EventosServices } from './../../app/services/eventosServices';
 import {Evento} from './../../app/models/Evento';
 
@@ -12,8 +12,9 @@ import {Evento} from './../../app/models/Evento';
 @IonicPage()
 @Component({
   selector: 'page-event-details',
-  templateUrl: 'event-details.html',
+  templateUrl: 'event-details.html' 
 })
+
 export class EventDetailsPage {
 
 public Evento:Evento=new Evento();

@@ -9,9 +9,37 @@
 </ion-header>
 
 <ion-content>    
-    <ion-card  *ngFor="let event of events" (click)=openDetail(event.$key)>
-        <img src={{event.Imagen}}/>
-        <div class="card-title">{{event.$key}}</div>
-        <div class="card-subtitle">{{event.Fecha}}</div>
-    </ion-card>    
+
+    <ion-card *ngFor="let event of events" (click)=openDetail(event.$key)>
+
+        <ion-item>
+            <ion-avatar item-start>          
+            </ion-avatar>
+            <h2>{{event.Nombre}}</h2>
+            <p>{{event.Fecha}}</p>
+        </ion-item>
+
+        
+        <img src={{event.Imagen}}>
+
+        <ion-card-content>
+            <p>{{event.Descripcion}}</p>
+        </ion-card-content>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>{{event.Calificacion}} Likes</div>
+                </button>
+            </ion-col>           
+            <ion-col center text-center>
+                <ion-note>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    {{event.Categoria}}
+                </ion-note>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+   
 </ion-content>
