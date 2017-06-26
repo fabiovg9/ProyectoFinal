@@ -1,8 +1,9 @@
+import { Authentication } from './../../app/services/authentication';
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { EventosServices } from './../../app/services/eventosServices';
 import {Evento} from './../../app/models/Evento';
-
+import {HomePage} from '../home/home';
 /**
  * Generated class for the EventDetailsPage page.
  *
@@ -22,10 +23,19 @@ lat:number=0;
 lng:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private eventsServices: EventosServices) {  
+              private eventsServices: EventosServices,
+              private auth: Authentication) {  
     
     var id= this.navParams.get("IdEvento");             
     this.getEventById(id);
+  }
+
+
+  ngOnInit() { 
+      let user:string= this.auth.getTokenFromLS();
+      if (!user) {
+        this.navCtrl.setRoot(HomePage);
+      }     
   }
 
   ionViewDidLoad() {

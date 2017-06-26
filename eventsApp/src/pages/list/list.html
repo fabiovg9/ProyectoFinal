@@ -1,45 +1,49 @@
 <ion-header>
     <ion-navbar>
         <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-        <ion-title>Eventos</ion-title>
-        <button class="btnAddEvent" (click)="addEvent()"><ion-icon name="add-circle"></ion-icon></button>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Lista de eventos</ion-title>
+        <div class="btnAddEvent" (click)="addEvent()" style="float: right"><ion-icon name="add-circle"></ion-icon></div>
     </ion-navbar>
 </ion-header>
 
 <ion-content>    
+    <ion-grid>
+        <ion-row class="container-slider">
+            <ion-col col-12 *ngFor="let event of events" >
+                <ion-card class="event-item" (click)=openDetail(event.$key)>
 
-    <ion-card *ngFor="let event of events" (click)=openDetail(event.$key)>
+                    <ion-item>
+                        <ion-avatar item-start>          
+                        </ion-avatar>
+                        <h2>{{event.Nombre}}</h2>
+                        <p>{{event.Fecha}}</p>
+                    </ion-item>
 
-        <ion-item>
-            <ion-avatar item-start>          
-            </ion-avatar>
-            <h2>{{event.Nombre}}</h2>
-            <p>{{event.Fecha}}</p>
-        </ion-item>
+                    
+                    <img class="event-image" src={{event.Imagen}}>
 
-        
-        <img src={{event.Imagen}}>
+                    <ion-card-content>
+                        <p>{{event.Descripcion}}</p>
+                    </ion-card-content>
 
-        <ion-card-content>
-            <p>{{event.Descripcion}}</p>
-        </ion-card-content>
-
-        <ion-row>
-            <ion-col>
-                <button ion-button icon-left clear small>
-                    <ion-icon name="thumbs-up"></ion-icon>
-                    <div>{{event.Calificacion}} Likes</div>
-                </button>
-            </ion-col>           
-            <ion-col center text-center>
-                <ion-note>
-                    <ion-icon name="thumbs-up"></ion-icon>
-                    {{event.Categoria}}
-                </ion-note>
+                    <ion-row>
+                        <ion-col>
+                            <button ion-button icon-left clear small>
+                                <ion-icon name="thumbs-up"></ion-icon>
+                                <div>{{event.Calificacion}} Likes</div>
+                            </button>
+                        </ion-col>           
+                        <ion-col center text-center>
+                            <ion-note>
+                                <ion-icon name="thumbs-up"></ion-icon>
+                                {{event.Categoria}}
+                            </ion-note>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
             </ion-col>
         </ion-row>
-    </ion-card>
-   
+    </ion-grid>
 </ion-content>
