@@ -71,9 +71,19 @@ export class AddEventPage {
       this.uploader.uploadFile(this.image)
             .then((url: string) =>{
               this.evento.Imagen = url;
-              console.log(this.evento);
-              //this.eventsServices(this.evento);
-              //this.navCtrl.setRoot(ListPage);
+              let event={
+                  "Nombre":this.evento.Nombre,
+                  "Calificacion":0,
+                  "Categoria":this.evento.Categoria,
+                  "Descripcion":this.evento.Descripcion,
+                  "Fecha": this.evento.Fecha,
+                  "Hora":this.evento.Hora,
+                  "Imagen":this.evento.Imagen,
+                  "Ubiacacion":this.evento.Ubiacacion
+                };
+      
+              this.eventsServices.insert(event);
+              this.navCtrl.setRoot(ListPage);
             })
             .catch((err)=>{
               console.log(err);

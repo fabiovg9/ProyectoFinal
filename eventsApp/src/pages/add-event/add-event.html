@@ -7,48 +7,52 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>addEvent</ion-title>
+        <ion-title>Nuevo Evento</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-            <form #formEvent="ngForm" (ngSubmit)="add()">
-                <ion-item>
-                    <ion-label floating>Nombre</ion-label>
-                    <ion-input type="text" [(ngModel)]="evento.Nombre" name="nombre"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label floating>Fecha</ion-label>
-                    <ion-datetime displayFormat="MMMM DD, YYYY" pickerFormat="MMMM DD YYYY" min="{{currentDate}}" cancelText="Cancelar" doneText="Listo" [(ngModel)]="evento.Fecha" name="fecha"></ion-datetime>
-                </ion-item>
-                <ion-item>
-                    <ion-label floating>Hora</ion-label>
-                    <ion-datetime displayFormat="HH:mm A" pickerFormat="HH:mm" cancelText="Cancelar" doneText="Listo" [(ngModel)]="evento.Hora" name="hora"></ion-datetime>
-                </ion-item>
-                <ion-item>
-                    <ion-label>Categoría</ion-label>
-                    <ion-select [(ngModel)]="evento.Categoria" name="categoria" okText="Listo" cancelText="Cancelar">
-                        <ion-option value="Deportes">Deportes</ion-option>
-                        <ion-option value="Tecnologia">Tecnología</ion-option>
-                        <ion-option value="Educacion">Educación</ion-option>
-                    </ion-select>
-                </ion-item>
-                <ion-item>
-                    <ion-label floating>Descripción</ion-label>
-                    <ion-textarea [(ngModel)]="evento.Descripcion" name="description"></ion-textarea>
-                </ion-item>
-                <div class="divImg">
-                    <ion-label>Imagen</ion-label>
-                    <input type="file" name="image" id="uploadImage" (change)="imageChange($event)" accept="image/*" capture="camera">
-                    <div *ngIf="!!prevImg" class="prevImg">
-                        <img id="prevImg" />
-                    </div>
-                </div>
-                <div class="buttons">
-                    <button class="btnform" ion-button color="light" (click)="cancel()">Cancelar</button>
-                    <button class="btnform" ion-button color="dark" type="submit">Agregar</button>
-                </div>
-            </form>
+    <form #formEvent="ngForm" (ngSubmit)="add()">
+        <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="evento.Nombre" name="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Fecha</ion-label>
+            <ion-datetime displayFormat="MMMM DD, YYYY" pickerFormat="MMMM DD YYYY" min="{{currentDate}}" cancelText="Cancelar" doneText="Listo" [(ngModel)]="evento.Fecha" name="fecha"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Hora</ion-label>
+            <ion-datetime displayFormat="HH:mm A" pickerFormat="HH:mm" cancelText="Cancelar" doneText="Listo" [(ngModel)]="evento.Hora" name="hora"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Categoría</ion-label>
+            <ion-select [(ngModel)]="evento.Categoria" name="categoria" okText="Listo" cancelText="Cancelar">
+                <ion-option value="Deportes">Deportes</ion-option>
+                <ion-option value="Tecnologia">Tecnología</ion-option>
+                <ion-option value="Educacion">Educación</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Descripción</ion-label>
+            <ion-textarea [(ngModel)]="evento.Descripcion" name="description"></ion-textarea>
+        </ion-item>
+        <div class="divImg">
+            <ion-label>Imagen</ion-label>
+            <input type="file" name="image" id="uploadImage" (change)="imageChange($event)" accept="image/*" capture="camera">
+            <div *ngIf="!!prevImg" class="prevImg">
+                <img id="prevImg" />
+            </div>
+        </div>
+        <ion-item>
+            <ion-label>Ubicación</ion-label>
+            <ion-input type="text" [(ngModel)]="evento.Ubiacacion" name="ubicacion"></ion-input>
+        </ion-item>
+        <div class="buttons">
+            <button class="btnform" ion-button color="light" (click)="cancel()">Cancelar</button>
+            <button class="btnform" ion-button color="dark" type="submit">Agregar</button>
+        </div>
+    </form>
 </ion-content>
