@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventosServices } from './../../app/services/eventosServices';
 import { CameraService } from './../../app/services/cameraServices';
-
+import { UploaderService } from './../../app/services/uploaderService';
 import { ListPage } from './../list/list';
 
 import { Evento } from './../../app/models/Evento';
@@ -22,17 +22,17 @@ export class AddEventPage {
 
   public evento: Evento;
   public currentDate: string = new Date().toISOString().split('T')[0];
+  public image: any;
+  public prevImg: boolean = false;
   
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private eventsServices: EventosServices,
-              private cameraServices: CameraService) {
+              private cameraServices: CameraService,
+              private uploader: UploaderService) {
   }
 
   ngOnInit() {
-    debugger;
-    console.log(this.currentDate);
-    console.log(new Date());
     this.evento = new Evento();
   }
 
@@ -40,13 +40,44 @@ export class AddEventPage {
     console.log('ionViewDidLoad AddEventPage');
   }
 
-private takePicture() {
+  private imageChange(ev){
+    this.image = ev.target.files[0];
+    if(this.image){
+      let type:any = this.image.type.split('/')[0];
+      debugger;
+      if(type === "image") {
+        this.prevImg = true;
+        let reader = new FileReader();
+        reader.onload = this.imageOnload;
+        reader.readAsDataURL(this.image);
+        return;
+      }
+    }
+    this.prevImg = false;
+    ev.target.value = null;
+    this.image = null;
+  }
+
+  private imageOnload(ev){
+    let result=ev.target.result;
+    document.getElementById("prevImg").setAttribute("src", result);
+  }
+
+  private takePicture() {
     this.cameraServices.takePicture();
   }
 
   private add(){
-    //this.eventsServices(this.evento);
-    this.navCtrl.setRoot(ListPage);
+      this.uploader.uploadFile(this.image)
+            .then((url: string) =>{
+              this.evento.Imagen = url;
+              console.log(this.evento);
+              //this.eventsServices(this.evento);
+              //this.navCtrl.setRoot(ListPage);
+            })
+            .catch((err)=>{
+              console.log(err);
+            });
   }
 
   private cancel(){

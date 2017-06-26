@@ -3,6 +3,6 @@ export const firebaseConfig = {
     authDomain: "eventos-e6792.firebaseapp.com",
     databaseURL: "https://eventos-e6792.firebaseio.com",
     projectId: "eventos-e6792",
-    storageBucket: "",
+    storageBucket: "eventos-e6792.appspot.com",
     messagingSenderId: "574898818800"
   };

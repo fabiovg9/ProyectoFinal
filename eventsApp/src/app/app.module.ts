@@ -6,6 +6,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Authentication } from './services/authentication';
 import { EventosServices } from './services/eventosServices';
 import { CameraService } from './services/cameraServices';
+import { UploaderService } from './services/uploaderService';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -66,6 +67,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     EventosServices,
     CameraService,
     Camera,
+    UploaderService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
