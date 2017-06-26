@@ -1,18 +1,3 @@
-<ion-header>
-    <ion-navbar>
-    <div class="titleicon" style="    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    text-align:center;">
-         <img src="logo.jpg" width="100px" />
-    </div>        
-        <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Inicio</ion-title>
-    </ion-navbar>
-</ion-header>
 
 <ion-content> 
 
@@ -20,9 +5,8 @@
                 <ion-row class="container-slider">
                     <ion-col col-12>
                          <ion-slides pager>
-                            <ion-slide>
-                                <p>Let's Go</p>
-                                <img src="./../../assets/LetsGoIcon.png" alt="">                                
+                            <ion-slide>                                
+                                <img src="./../../assets/splash.png" alt="">                                
                             </ion-slide>
 
                             <ion-slide>
@@ -30,7 +14,7 @@
                             </ion-slide>
 
                             <ion-slide>
-                                <p>En cualquier momento, podrás consultar los eventos que puedan ser de tu interes.</p>
+                                <p>Agenda eventos a los que deseas asistir.</p>
                             </ion-slide>
                         </ion-slides>     
                     </ion-col>
@@ -48,7 +32,7 @@
                     </ion-col>
                     <ion-col col-6>
                         <button ion-button class="button-google" (click)="createAccountGoogle()">
-                            <ion-icon name="logo-google"></ion-icon><p> Inicio con gmail</p>
+                            <ion-icon name="logo-google"></ion-icon><p> Inicio con Google</p>
                         </button>
                     </ion-col>
                 </ion-row>                         
