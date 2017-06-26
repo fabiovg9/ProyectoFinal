@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
 import {AddEventPage} from '../add-event/add-event';
+import {EventDetailsPage} from '../event-details/event-details';
 
 @IonicPage()
 @Component({
@@ -31,6 +32,12 @@ export class ListPage {
 
   private addEvent() {
     this.navCtrl.setRoot(AddEventPage);
+  }
+
+  private openDetail(event:string) {
+    //this.navCtrl.setRoot(EventDetailsPage,{IdEvento:'5'});
+    debugger;
+    this.navCtrl.push(EventDetailsPage, {IdEvento: event});
   }
 
 }

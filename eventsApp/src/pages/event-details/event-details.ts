@@ -17,12 +17,15 @@ import {Evento} from './../../app/models/Evento';
 export class EventDetailsPage {
 
 public Evento:Evento=new Evento();
-lat:number=6.256802;
-lng:number=-75.590286;
+lat:number=0;
+lng:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private eventsServices: EventosServices) {                
-    this.getEventById();
+              private eventsServices: EventosServices) {  
+
+    debugger;
+    var id= this.navParams.get("IdEvento");             
+    this.getEventById(id);
   }
 
   ionViewDidLoad() {
@@ -30,10 +33,7 @@ lng:number=-75.590286;
 }
 
 
-private getEventById(){
-  //var id= this.navParams.get("IdEvento");
-  var id="Casa Juan";
-
+private getEventById(id:string){    
     this.eventsServices.getItem(id).subscribe(evento=>{        
         this.Evento.Nombre=evento[6].$value;
         this.Evento.Fecha=evento[3].$value;
@@ -42,6 +42,9 @@ private getEventById(){
         this.Evento.Hora=evento[4].$value;
         this.Evento.Descripcion=evento[2].$value;
         this.Evento.Ubiacacion=evento[7].$value;
+
+        this.lat=Number(this.Evento.Ubiacacion.split(',')[0]);
+        this.lng=Number(this.Evento.Ubiacacion.split(',')[1]);
         console.log(this.Evento);
     });
 
