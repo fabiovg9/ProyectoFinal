@@ -23,8 +23,7 @@ lng:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private eventsServices: EventosServices) {  
-
-    debugger;
+    
     var id= this.navParams.get("IdEvento");             
     this.getEventById(id);
   }

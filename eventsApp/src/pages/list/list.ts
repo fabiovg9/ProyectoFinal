@@ -35,8 +35,7 @@ export class ListPage {
   }
 
   private openDetail(event:string) {
-    //this.navCtrl.setRoot(EventDetailsPage,{IdEvento:'5'});
-    debugger;
+    //this.navCtrl.setRoot(EventDetailsPage,{IdEvento:'5'});    
     this.navCtrl.push(EventDetailsPage, {IdEvento: event});
   }
 
