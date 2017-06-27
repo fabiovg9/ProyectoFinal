@@ -60,7 +60,10 @@ page-home {
 .actions-user{
     position: absolute;
     bottom: 0;
-    widows: 100%;
+    right: 0;
+}
+.actions-user ion-icon{
+    margin-top: 5px;
 }
 .item-md h3{
     text-transform: uppercase;

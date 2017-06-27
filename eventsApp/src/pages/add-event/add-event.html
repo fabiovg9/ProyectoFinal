@@ -46,13 +46,21 @@
                 <img id="prevImg" />
             </div>
         </div>
-        <div>
-            <ion-label>Ubicación</ion-label>
-            <div ion-button>
-                <ion-icon name="pin"></ion-icon>
-                <p>Ver Mapa</p>
-            </div>
-        </div>
+        <ion-row>   
+        <ion-col col-5>
+            <a ion-button icon-right clear small (click)="loadMap()">
+                <ion-note>
+                    <ion-icon name="pin"></ion-icon>
+                    Mapa
+                </ion-note>
+            </a>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                 <div #map id="map"></div>
+            </ion-col>
+        </ion-row>
         <div class="buttons">
             <button class="btnform" ion-button color="dark" type="submit">Agregar</button>
         </div>

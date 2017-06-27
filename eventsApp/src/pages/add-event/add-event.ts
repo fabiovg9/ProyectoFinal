@@ -42,11 +42,6 @@ export class AddEventPage {
       if (!user) {
         this.navCtrl.setRoot(HomePage);
       }
-    this.geo.getCurrentLocaction().then((resp) => {
-            console.log(resp.coords.latitude+","+resp.coords.longitude);
-        }).catch((error) => {
-            console.log('Error getting location', error);
-        });
     this.evento = new Evento();
   }
 
@@ -79,6 +74,14 @@ export class AddEventPage {
 
   private takePicture() {
     this.cameraServices.takePicture();
+  }
+
+  private loadMap(){
+    this.geo.getCurrentLocaction().then((resp) => {
+            console.log(resp.coords.latitude+","+resp.coords.longitude);
+        }).catch((error) => {
+            console.log('Error getting location', error);
+        });
   }
 
   private add(){
