@@ -1,9 +1,7 @@
 {
   "name": "eventsApp",
-<<<<<<< HEAD
+  
   "app_id": "f84af564",
-=======
-  "app_id": "0f563ec3",
->>>>>>> c19dc7cc6c3f1a86c1d4f971dc2f87554f72fee8
+
   "type": "ionic-angular"
 }
