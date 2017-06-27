@@ -1,13 +1,29 @@
 page-home {
-.container-slider{
-    background-color: #00b034;
-
-    p{
-        color: white;
+    .container-slider {
+        background-color: #00b034;
+        p {
+            color: white;
+        }
+    }
+    .footer-slider {
+        background-color: white;
     }
 }
-.footer-slider{
-    background-color: white; 
+
+.register {
+    margin-left: 16px;
+    margin-top: 15px;
 }
 
+.register a {
+    color: #365899;
+    text-decoration: underline;
+    font-style: italic;
+    display: block;
+    text-align: center;
+}
+
+.button-sigIn {
+    width: 100%;
+    margin-top: 26px;
 }

@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { Authentication } from './services/authentication';
 import { EventosServices } from './services/eventosServices';
 import { CameraService } from './services/cameraServices';
 import { UploaderService } from './services/uploaderService';
+import {GeolocationService} from './services/geolocation';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -17,6 +19,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { MapsPage } from '../pages/maps/maps';
+import { RegisterPage } from '../pages/register/register';
 import { LogInPage } from './../pages/log-in/log-in';
 import { EventDetailsPage } from './../pages/event-details/event-details';
 import { AddEventPage } from './../pages/add-event/add-event';
@@ -36,7 +39,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     LogInPage,
     EventDetailsPage,
     AddEventPage,
-    MapsPage
+    MapsPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     LogInPage,
     EventDetailsPage,
     AddEventPage,
-    MapsPage
+    MapsPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
@@ -71,6 +76,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     CameraService,
     Camera,
     UploaderService,
+    Geolocation,
+    GeolocationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Authentication } from './../../app/services/authentication';
 import { EventosServices } from './../../app/services/eventosServices';
 import { CameraService } from './../../app/services/cameraServices';
 import { UploaderService } from './../../app/services/uploaderService';
+import {GeolocationService} from './../../app/services/geolocation';
 import { ListPage } from './../list/list';
-
+import {HomePage} from './../home/home';
 import { Evento } from './../../app/models/Evento';
 
 /**
@@ -24,15 +26,27 @@ export class AddEventPage {
   public currentDate: string = new Date().toISOString().split('T')[0];
   public image: any;
   public prevImg: boolean = false;
+  public geolocation: string;
   
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private eventsServices: EventosServices,
               private cameraServices: CameraService,
-              private uploader: UploaderService) {
+              private uploader: UploaderService,
+              private auth: Authentication,
+              private geo: GeolocationService) {
   }
 
   ngOnInit() {
+    let user:string= this.auth.getTokenFromLS();
+      if (!user) {
+        this.navCtrl.setRoot(HomePage);
+      }
+    this.geo.getCurrentLocaction().then((resp) => {
+            console.log(resp.coords.latitude+","+resp.coords.longitude);
+        }).catch((error) => {
+            console.log('Error getting location', error);
+        });
     this.evento = new Evento();
   }
 

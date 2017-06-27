@@ -36,6 +36,10 @@ export class Authentication{
         this.angularAuth.auth.createUserWithEmailAndPassword(email, password);
     }
 
+    loginUserWithEmailAndPassword(email,password){
+        this.angularAuth.auth.signInWithEmailAndPassword(email, password)
+    }
+
     createUserWithGoogle(){
         let provider = new firebase.auth.GoogleAuthProvider();
 

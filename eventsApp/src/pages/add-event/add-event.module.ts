@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { AddEventPage } from './add-event';
 import { ListPage } from './../list/list';
 
+
 @NgModule({
   declarations: [
     AddEventPage,

@@ -45,6 +45,7 @@ export class MyApp {
   }
 
   logOut(){
+    this.nav.setRoot(HomePage);
     this.auth.logOut();
   }
 
