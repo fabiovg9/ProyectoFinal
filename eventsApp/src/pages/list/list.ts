@@ -48,4 +48,58 @@ export class ListPage {
     this.navCtrl.push(EventDetailsPage, {IdEvento: event});
   }
 
+  private splitDate(date:string){
+    let fecha=[];
+    var fechaarr=date.split('-');
+    fecha.push(fechaarr[0]);
+    fecha.push(this.getMothByNumber(fechaarr[1]));
+    fecha.push(fechaarr[2]);
+    return fecha;
+   
+  }
+
+  private getMothByNumber(numer:string){
+    let mes:string;
+    switch (numer) {
+      case "01":
+        mes="ENE";
+        break;
+      case "02":
+        mes="FEB";
+        break;
+      case "03":
+        mes="MAR";
+        break;
+      case "04":
+        mes="ABR";        
+        break;
+      case "05":
+        mes="MAY";
+        break;
+      case "06":
+        mes="JUN";
+        break;
+      case "07":
+        mes="JUL";
+        break;
+      case "08":
+        mes="AGO";
+        break;
+      case "09":
+        mes="SEP";
+        break;
+      case "10":
+        mes="OCT";
+        break;
+      case "11":
+        mes="NOV";
+        break;
+      case "12":
+        mes="DIC";
+        break;              
+    }
+
+    return mes;
+  }
+
 }
