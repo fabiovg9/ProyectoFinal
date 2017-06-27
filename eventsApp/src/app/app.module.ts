@@ -16,6 +16,7 @@ import { firebaseConfig } from './enviroments/firebaseconfig';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { MapsPage } from '../pages/maps/maps';
 import { LogInPage } from './../pages/log-in/log-in';
 import { EventDetailsPage } from './../pages/event-details/event-details';
 import { AddEventPage } from './../pages/add-event/add-event';
@@ -34,7 +35,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     ListPage,
     LogInPage,
     EventDetailsPage,
-    AddEventPage
+    AddEventPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     ListPage,
     LogInPage,
     EventDetailsPage,
-    AddEventPage
+    AddEventPage,
+    MapsPage
   ],
   providers: [
     StatusBar,

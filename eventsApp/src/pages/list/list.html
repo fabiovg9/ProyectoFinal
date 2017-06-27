@@ -1,17 +1,27 @@
 <ion-header>
     <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Lista de eventos</ion-title>
-        <div class="btnAddEvent" (click)="addEvent()" style="float: right"><ion-icon name="add-circle"></ion-icon></div>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-3>
+                    <button ion-button menuToggle>
+                        <ion-icon name="menu"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-title>Lista de eventos</ion-title>
+                </ion-col>
+                <ion-col col-1>
+                    <ion-icon name="add-circle" (click)="addEvent()"></ion-icon>
+                </ion-col>
+            </ion-row>   
+        </ion-grid>                         
     </ion-navbar>
 </ion-header>
 
 <ion-content>    
     <ion-grid>
         <ion-row class="container-slider">
-            <ion-col col-12 *ngFor="let event of events" >
+            <ion-col col-12 col-sm-6 col-md-3 *ngFor="let event of events" >
                 <ion-card class="event-item" (click)=openDetail(event.$key)>
 
                     <ion-item>

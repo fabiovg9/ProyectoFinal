@@ -1,9 +1,10 @@
 import { Authentication } from './../../app/services/authentication';
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, ModalController } from 'ionic-angular';
 import { EventosServices } from './../../app/services/eventosServices';
 import {Evento} from './../../app/models/Evento';
 import {HomePage} from '../home/home';
+import {MapsPage} from '../maps/maps';
 /**
  * Generated class for the EventDetailsPage page.
  *
@@ -24,7 +25,7 @@ lng:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private eventsServices: EventosServices,
-              private auth: Authentication) {  
+              private auth: Authentication,public modalCtrl: ModalController) {  
     
     var id= this.navParams.get("IdEvento");             
     this.getEventById(id);
@@ -52,6 +53,7 @@ private getEventById(id:string){
         this.Evento.Hora=evento[4].$value;
         this.Evento.Descripcion=evento[2].$value;
         this.Evento.Ubiacacion=evento[7].$value;
+        this.Evento.Calificacion=evento[0].$value;
 
         this.lat=Number(this.Evento.Ubiacacion.split(',')[0]);
         this.lng=Number(this.Evento.Ubiacacion.split(',')[1]);
@@ -59,6 +61,11 @@ private getEventById(id:string){
     });
 
 }
+
+ presentModal() {   
+    let modal = this.modalCtrl.create(MapsPage,{lat:this.lat,lng:this.lng});
+    modal.present();
+  }
 
 
 }

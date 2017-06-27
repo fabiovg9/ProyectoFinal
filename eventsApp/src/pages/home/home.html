@@ -26,20 +26,25 @@
                         </ion-slides>     
                     </ion-col>
                 </ion-row>
-                <ion-row>
+                <ion-row *ngIf="auth.token">
+                    <button class="button-face" ion-button (click)="showEventsPage()">
+                        <ion-icon name=""></ion-icon> <p> Ver eventos</p>
+                    </button>
+                </ion-row>
+                <ion-row *ngIf="!auth.token">
                     <ion-col col-12>
                         <p>Al registrarse, acepta nuestras <b>políticas de privacidad</b></p>     
                     </ion-col>
                 </ion-row>
-                <ion-row>                    
+                <ion-row *ngIf="!auth.token">                    
                     <ion-col col-6>
                         <button class="button-face" ion-button (click)="createAccountFace()">
-                            <ion-icon name="logo-facebook"></ion-icon><p> Inicio con Facebook</p>
+                            <ion-icon name="logo-facebook"></ion-icon><p>&nbsp;Facebook</p>
                         </button>
                     </ion-col>
                     <ion-col col-6>
                         <button ion-button class="button-google" (click)="createAccountGoogle()">
-                            <ion-icon name="logo-google"></ion-icon><p> Inicio con Google</p>
+                            <ion-icon name="logo-google"></ion-icon><p>&nbsp;Google</p>
                         </button>
                     </ion-col>
                 </ion-row>                         

@@ -4,48 +4,50 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
+<ion-header> 
   <ion-navbar>
-    <ion-title>eventDetails</ion-title>
+    <ion-title>{{Evento.Nombre}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content> 
+<ion-content>     
+    <ion-grid>
+        <ion-row class="container-slider">
+            <ion-col col-12>              
+                <ion-card>
 
-  <ion-card>
+                        <img src={{Evento.Imagen}}/>
 
-        <img src={{Evento.Imagen}}/>
+                        <ion-card-content>
+                            <ion-card-title>
+                            {{Evento.Nombre}}
+                            </ion-card-title>
+                            <p>
+                                {{Evento.Descripcion}}
+                            </p>
+                        </ion-card-content>
+                        
+                        <ion-item>
+                            <ion-icon name='calendar' item-start style="color: #55acee"></ion-icon>
+                            {{Evento.Fecha}}                                                        
+                        </ion-item>                        
 
-        <ion-card-content>
-            <ion-card-title>
-               {{Evento.Nombre}}
-            </ion-card-title>
-            <p>
-                {{Evento.Descripcion}}
-            </p>
-        </ion-card-content>
-        
-        <ion-item>
-            <ion-icon name='calendar' item-start style="color: #55acee"></ion-icon>
-            {{Evento.Fecha}}
-            <ion-badge item-end>{{Evento.Calificacion}}</ion-badge>
-        </ion-item>
+                        <ion-item>
+                            <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
+                            {{Evento.Categoria}}
+                            <ion-badge item-end>{{Evento.Calificacion}}</ion-badge>
+                        </ion-item>
 
-        <ion-item>
-            <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
-            {{Evento.Categoria}}
-            <ion-badge item-end>9</ion-badge>
-        </ion-item>  
-    </ion-card>
-
-    <sebm-google-map [latitude]="lat" [longitude]="lng" style="width: 100%; height: 100%"  [zoom]="17">
-      <sebm-google-map-marker
-              [latitude]="lat"
-              [longitude]="lng">
-      </sebm-google-map-marker>
-    </sebm-google-map>   
-   
+                        <ion-item>
+                            <div ion-button (click)="presentModal()" style="float: right;">  
+                                <ion-icon name="pin"></ion-icon><p>Ver Mapa</p>
+                            </div>                            
+                        </ion-item>
+                        
+                    </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

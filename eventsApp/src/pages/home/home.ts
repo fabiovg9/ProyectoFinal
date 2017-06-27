@@ -21,6 +21,10 @@ export class HomePage {
       }*/
   }
 
+  showEventsPage(){
+    this.navCtrl.setRoot(ListPage);
+  }
+
   createAccountGoogle(){
     this.auth.createUserWithGoogle();
   }
