@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Authentication } from './../../app/services/authentication';
 import { EventosServices } from './../../app/services/eventosServices';
@@ -15,18 +15,29 @@ import { Evento } from './../../app/models/Evento';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+
+
+declare var google;
+
 @IonicPage()
 @Component({
   selector: 'page-add-event',
   templateUrl: 'add-event.html',
 })
+
+
+
 export class AddEventPage {
+
 
   public evento: Evento;
   public currentDate: string = new Date().toISOString().split('T')[0];
   public image: any;
   public prevImg: boolean = false;
   public geolocation: string;
+
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
   
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -78,7 +89,17 @@ export class AddEventPage {
 
   private loadMap(){
     this.geo.getCurrentLocaction().then((resp) => {
-            console.log(resp.coords.latitude+","+resp.coords.longitude);
+    
+                let latLng = new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude);
+           
+                let mapOptions = {
+                  center: latLng,
+                  zoom: 15,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+           
+                this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
         }).catch((error) => {
             console.log('Error getting location', error);
         });
