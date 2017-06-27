@@ -41,11 +41,10 @@ export class ListPage {
   } 
 
   private addEvent() {
-    this.navCtrl.setRoot(AddEventPage);
+    this.navCtrl.push(AddEventPage);
   }
 
-  private openDetail(event:string) {
-    //this.navCtrl.setRoot(EventDetailsPage,{IdEvento:'5'});    
+  private openDetail(event:string) {      
     this.navCtrl.push(EventDetailsPage, {IdEvento: event});
   }
 
