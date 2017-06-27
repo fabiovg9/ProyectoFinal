@@ -2,7 +2,7 @@
     <ion-navbar>
         <ion-grid>
             <ion-row>
-                <ion-col col-3>
+                <ion-col col-2>
                     <button ion-button menuToggle>
                         <ion-icon name="menu"></ion-icon>
                     </button>
@@ -10,8 +10,10 @@
                 <ion-col col-8>
                     <ion-title>Lista de eventos</ion-title>
                 </ion-col>
-                <ion-col col-1>
-                    <ion-icon name="add-circle" (click)="addEvent()"></ion-icon>
+                <ion-col col-2>
+                    <div class="add-list">
+                        <ion-icon name="add-circle" class="add-item" (click)="addEvent()"></ion-icon>
+                    </div>
                 </ion-col>
             </ion-row>   
         </ion-grid>                         
@@ -24,32 +26,42 @@
             <ion-col col-12 col-sm-6 col-md-3 *ngFor="let event of events" >
                 <ion-card class="event-item" (click)=openDetail(event.$key)>
 
+                    <img class="event-image" src={{event.Imagen}}>
+
                     <ion-item>
                         <ion-avatar item-start>          
                         </ion-avatar>
-                        <h2>{{event.Nombre}}</h2>
-                        <p>{{event.Fecha}}</p>
+                        
+                        <div class="date-item">
+                            <p>12</p>
+                            <h2>JUN</h2>
+                        </div>
+                        <h3>{{event.Nombre}}</h3>
+                        <p class="desc">{{event.Descripcion}}</p>
+                        <!-- <h5>{{event.Fecha}}</h5> -->
                     </ion-item>
 
                     
-                    <img class="event-image" src={{event.Imagen}}>
+                    
 
                     <ion-card-content>
-                        <p>{{event.Descripcion}}</p>
+                        
                     </ion-card-content>
 
-                    <ion-row>
+                    <ion-row class="actions-user">
                         <ion-col>
                             <button ion-button icon-left clear small>
                                 <ion-icon name="thumbs-up"></ion-icon>
-                                <div>{{event.Calificacion}} Likes</div>
+                                <div>{{event.Calificacion}}</div>
                             </button>
                         </ion-col>           
                         <ion-col center text-center>
-                            <ion-note>
-                                <ion-icon name="thumbs-up"></ion-icon>
-                                {{event.Categoria}}
-                            </ion-note>
+                            <button ion-button icon-right clear small>
+                                <ion-note>
+                                    <ion-icon name="bookmark"></ion-icon>
+                                    {{event.Categoria}}
+                                </ion-note>
+                            </button>
                         </ion-col>
                     </ion-row>
                 </ion-card>

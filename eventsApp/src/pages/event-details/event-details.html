@@ -21,31 +21,52 @@
                         <img src={{Evento.Imagen}}/>
 
                         <ion-card-content>
-                            <ion-card-title>
-                            {{Evento.Nombre}}
-                            </ion-card-title>
-                            <p>
-                                {{Evento.Descripcion}}
-                            </p>
+                            <div class="date-item">
+                                <p>12</p>
+                                <h2>JUN</h2>
+                            </div>
+                            <h3> {{Evento.Nombre}}</h3>
+                            <p class="desc"> {{Evento.Descripcion}}</p>
+
                         </ion-card-content>
+
                         
-                        <ion-item>
+                        
+                        <!-- <ion-item>
                             <ion-icon name='calendar' item-start style="color: #55acee"></ion-icon>
                             {{Evento.Fecha}}                                                        
-                        </ion-item>                        
+                        </ion-item>   -->                     
 
-                        <ion-item>
+                       <!-- <ion-item>
                             <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
                             {{Evento.Categoria}}
                             <ion-badge item-end>{{Evento.Calificacion}}</ion-badge>
-                        </ion-item>
-
-                        <ion-item>
-                            <div ion-button (click)="presentModal()" style="float: right;">  
-                                <ion-icon name="pin"></ion-icon><p>Ver Mapa</p>
-                            </div>                            
-                        </ion-item>
+                        </ion-item> -->
                         
+                        <ion-row class="actions-user">
+                            <ion-col col-2>
+                                <button ion-button icon-left clear small>
+                                    <ion-icon name="thumbs-up"></ion-icon>
+                                    <div>{{Evento.Calificacion}}</div>
+                                </button>
+                            </ion-col>           
+                            <ion-col col-5>
+                                <button ion-button icon-right clear small>
+                                    <ion-note>
+                                        <ion-icon name="bookmark"></ion-icon>
+                                        {{Evento.Categoria}}
+                                    </ion-note>
+                                </button>
+                            </ion-col>
+                            <ion-col col-5>
+                                <button ion-button icon-right clear small (click)="presentModal()">
+                                    <ion-note>
+                                        <ion-icon name="pin"></ion-icon>
+                                        Mapa
+                                    </ion-note>
+                                </button>
+                            </ion-col>
+                        </ion-row>
                     </ion-card>
             </ion-col>
         </ion-row>

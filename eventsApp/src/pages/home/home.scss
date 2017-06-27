@@ -1,3 +1,4 @@
+
 page-home {
 .container-slider{
     background-color: #00b034;
@@ -10,4 +11,96 @@ page-home {
     background-color: white; 
 }
 
+}
+
+.grid{
+    background-color: #f7f7f7;
+}
+.card-md{
+    border-radius: 0;
+    position: relative;
+}
+.card-md h3{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 40px;
+}
+.card-md h5{
+    font-weight: 300;
+    font-size: 11px;
+    padding-left: 40px;
+}
+.card-md p.desc{
+    color: #333;
+    font-size: 13px;
+    padding-left: 40px;
+}
+.card-content-md{
+    margin-bottom: 35px;
+}
+.item-md ion-avatar[item-start]{
+    display: none;
+}
+
+.actions-user{
+    position: absolute;
+    bottom: 0;
+    widows: 100%;
+}
+.item-md h3{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 40px;
+}
+.item-md h5{
+    font-weight: 300;
+    font-size: 11px;
+    padding-left: 40px;
+}
+.item-md p.desc{
+    color: #333;
+    font-size: 13px;
+    padding-left: 40px;
+}
+
+.date-item{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+.date-item h2{
+    color: #00b;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+.date-item p{
+    margin: 0 0 0;
+    padding: 0;
+}
+
+.card-content-md{
+    position: relative;
+}
+
+.toolbar-title-md{
+    margin-top: 5px;
+}
+
+.add-list{
+    text-align: center;
+}
+.add-list ion-icon.add-item{
+    font-size: 2em;
+    margin-top: 3px;
+}
+img.img-slider-header{
+    margin-top: 15px;
+    border-radius: 50%;
 }
