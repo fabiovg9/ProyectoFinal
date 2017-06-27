@@ -33,8 +33,8 @@
                         </ion-avatar>
                         
                         <div class="date-item">
-                            <p>12</p>
-                            <h2>JUN</h2>
+                            <p>{{splitDate(event.Fecha)[2]}}</p>
+                            <h2>{{splitDate(event.Fecha)[1]}}</h2>
                         </div>
                         <h3>{{event.Nombre}}</h3>
                         <p class="desc">{{event.Descripcion}}</p>
