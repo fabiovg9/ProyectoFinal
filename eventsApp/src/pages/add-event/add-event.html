@@ -58,7 +58,7 @@
         </ion-row>
         <ion-row>
             <ion-col col-12>
-                 <div #map id="map"></div>
+                 <div #map id="map" [ngClass]="showMap ? 'map-style': ''"></div>
             </ion-col>
         </ion-row>
         <div class="buttons">

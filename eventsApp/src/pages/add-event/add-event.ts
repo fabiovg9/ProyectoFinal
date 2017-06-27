@@ -35,6 +35,7 @@ export class AddEventPage {
   public image: any;
   public prevImg: boolean = false;
   public geolocation: string;
+  public showMap: boolean = false;
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
@@ -54,17 +55,26 @@ export class AddEventPage {
         this.navCtrl.setRoot(HomePage);
       }
     this.evento = new Evento();
+    this.initMap();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddEventPage');
   }
 
+  private initMap(){
+    this.evento.Ubiacacion = "6.256664, -75.590209";
+    this.geo.getCurrentLocaction().then((resp) => {
+      this.evento.Ubiacacion = resp.coords.latitude+","+resp.coords.longitude;
+      }).catch((error) => {
+          console.log('Error getting location', error);
+      });
+  }
+
   private imageChange(ev){
     this.image = ev.target.files[0];
     if(this.image){
       let type:any = this.image.type.split('/')[0];
-      debugger;
       if(type === "image") {
         this.prevImg = true;
         let reader = new FileReader();
@@ -87,22 +97,34 @@ export class AddEventPage {
     this.cameraServices.takePicture();
   }
 
-  private loadMap(){
-    this.geo.getCurrentLocaction().then((resp) => {
-    
-                let latLng = new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude);
-           
-                let mapOptions = {
-                  center: latLng,
-                  zoom: 15,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-           
-                this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+  private loadMap() {
 
-        }).catch((error) => {
-            console.log('Error getting location', error);
-        });
+    this.showMap = true;
+    let lat = this.evento.Ubiacacion.split(',');
+    let latLng = new google.maps.LatLng(lat[0], lat[1]);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+      let marker = new google.maps.Marker({
+      map: this.map,
+      //animation: google.maps.Animation.DROP,
+      draggable: true,
+      position: this.map.getCenter()
+    });
+    
+
+    marker.addListener('click', () => {
+      this.map.setZoom(8);
+      this.map.setCenter(marker.getPosition());
+      console.log(marker.getPosition());
+      this.evento.Ubiacacion = marker.getPosition().lat()+","+marker.getPosition().lng();
+    });
   }
 
   private add(){
